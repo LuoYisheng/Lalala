@@ -1,0 +1,13 @@
+Core	objectives	and	principles	that	cloud	
+computing	must	meet	to	be	successful:		
+1. Security	
+2. Scalability
+3. Availability	
+4. Performance	
+5. Cost-effective	
+6. Acquire	resources	on	demand	
+7. Release	resources	when	no	longer	needed	
+8. Pay	for	what	you	use	
+9. Leverage	others’	core	competencies	
+10. Turn	fixed	cost	into	variable	cost
+
