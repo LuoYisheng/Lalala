@@ -1,13 +1,24 @@
+S1 ------------------------------------------
 Core	objectives	and	principles	that	cloud	
 computing	must	meet	to	be	successful:		
-1. Security	
-2. Scalability
-3. Availability	
-4. Performance	
-5. Cost-effective	
-6. Acquire	resources	on	demand	
-7. Release	resources	when	no	longer	needed	
-8. Pay	for	what	you	use	
-9. Leverage	others’	core	competencies	
-10. Turn	fixed	cost	into	variable	cost
+  1. Security	
+  2. Scalability
+  3. Availability	
+  4. Performance	
+  5. Cost-effective	
+  6. Acquire	resources	on	demand	
+  7. Release	resources	when	no	longer	needed	
+  8. Pay	for	what	you	use	
+  9. Leverage	others’	core	competencies	
+  10. Turn	fixed	cost	into	variable	cost
+
+S1 Cost-efficiency---------------------------------
+1. Utility Calculation:
+  charged cost per unit = cost per unit/utilization
+  #utilization = used percentage
+
+2. Trends: 
+  2.1 Personal cloud -> Public cloud                  30%->60%
+  2.2 On	Demand	Pricing	to	Increase	Utilization   60%->80%
+  2.3 Spot	Prices	to	Drive	Additional	Demand      80%->90%
 
