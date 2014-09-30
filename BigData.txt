@@ -1,4 +1,4 @@
-S1 ------------------------------------------
+S1 Introduction-----------------------------------
 Core	objectives	and	principles	that	cloud	
 computing	must	meet	to	be	successful:		
   1. Security	
@@ -22,3 +22,38 @@ S1 Cost-efficiency---------------------------------
   2.2 On	Demand	Pricing	to	Increase	Utilization   60%->80%
   2.3 Spot	Prices	to	Drive	Additional	Demand      80%->90%
 
+S3 On demand & Comparative advantage----------------
+capacity = peak use
+cost per unit used = cost per unit *(idle+used)/used
+
+On demand - IT capacity Mgmt
+Allocated IT capacities > Actual load
+
+Optimization for different demand type
+cost-efficient analysis examples: facebook, newyork time, dropbox
+
+On-premise infra -> cloud-based infra
+more time to focus on business
+
+What	Happens	in	Competitive	Markets?
+• Firms	make	short	term	abnormal	profit	
+• Other	firms	enter	the	industry	to	take	advantage	of	
+abnormal	profit
+• Supply	increases	and	prices	fall
+• Over	the	long	run,	normal	profit	is	made
+• Consumers	have	choice
+• Prices	remain	sufficient	to	make	normal	profit	but	no	
+more
+
+Advantages	of	Perfect	Competition
+• High	degree	of	competition	helps	allocate	resources	
+to	most	efficient	use	
+• Price	=	marginal	costs	
+• Normal	profit	made	in	the	long	run	
+• Firms	operate	at	maximum	efficiency	
+• Consumers	benefit
+
+
+S4 - Null
+
+S5 Google-------------------------------------------
