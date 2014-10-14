@@ -1,0 +1,26 @@
+capital=200
+price=4
+sum=0
+
+
+drink
+bottle(4-1)
+cap(2-1)
+
+drink=capital/price
+sum+=drink
+bottle+=drink
+cap+=drink
+drink=0
+
+With bottle>4 or cap>2
+  drink+=bottle//4
+  bottle=bottle%4
+  drink+=cap//2
+  cap=cap%2
+  sum+=drink
+  bottle+=drink
+  cap+=drink
+  drink=0
+
+return sum,bottle,cap
