@@ -1,0 +1,730 @@
+Sub Macro3()
+'
+' Macro3 Macro
+'
+
+'
+    'declare the variable myValue of type Variant
+    Dim myValue As Variant
+    myValue = InputBox("input country")
+    Range("Z28").Value = myValue
+    
+    'lookup country in YTD Outlook
+    Range("AA28:BA28").Select
+    Selection.FormulaArray = _
+        "=VLOOKUP(RC[-1],R[-20]C[-1]:R[-3]C[26],{2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27},FALSE)"
+    
+    Range("AC29").Select
+    ActiveCell.FormulaR1C1 = "=SUMIF(R[-1]C:R[-1]C[2],"">0"")"
+    Range("AC30").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IF(R[-1]C=R[-2]C[1],""SIP"",IF(R[-1]C=SUM(R[-2]C[1]:R[-2]C[2]),""SIP,Voice"",IF(R[-1]C=SUM(R[-2]C:R[-2]C[1]),""G2C V2, SIP"", ""G2C V2,SIP Voice"")))"
+    
+    Range("AF29").Select
+    ActiveCell.FormulaR1C1 = "=SUM(R[-1]C:R[-1]C[1])"
+    Range("AF30").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IF(R[-1]C=SUM(R[-2]C:R[-2]C[1]),""Sunset Delay,EOL SW, Global Task"",IF(R[-1]C=R[-2]C[1],""Global Task""))"
+    Range("AH29").Select
+    ActiveCell.FormulaR1C1 = "=SUM(R[-1]C:R[-1]C[4])"
+    
+    Range("AH30").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IF(R[-1]C=SUM(R[-2]C,R[-2]C[2]:R[-2]C[4]),""MF Shared Component, MF Tape, Others"",IF(R[-1]C=SUM(R[-2]C:R[-2]C[1],R[-2]C[3]:R[-2]C[4]),""MF Shared Component, Data Retention, Others"", IF(R[-1]C=SUM(R[-2]C[1]:R[-2]C[4]),""MF Tape, Data Retention, Others"", ""MF Shared Component, MF Tape, Data Retention, Others"")))"
+    
+    Range("AK29").Select
+    ActiveCell.FormulaR1C1 = "=SUM(R[-1]C:R[-1]C[1])"
+    Range("AK30").Select
+    ActiveCell.FormulaR1C1 = "Others"
+    
+    Range("AO29").Select
+    ActiveCell.FormulaR1C1 = "=-R[-1]C"
+    Range("AP29").Select
+    ActiveCell.FormulaR1C1 = _
+        "=-SUM(R[-1]C:R[-1]C[3])+IF(R[-1]C[-13]<0,R[-1]C[-13])+IF(R[-1]C[-11]<0,R[-1]C[-11])"
+    
+    Range("C4").Select
+    ActiveCell.FormulaR1C1 = "=R[24]C[24]"
+    Range("D4").Select
+    ActiveCell.FormulaR1C1 = "=R[24]C[44]"
+    
+    Range("D8").Select
+    ActiveCell.FormulaR1C1 = "=R[21]C[25]"
+    Range("C8").Select
+    ActiveCell.FormulaR1C1 = "=R[22]C[26]"
+    Range("C9").Select
+    ActiveCell.FormulaR1C1 = "=R[21]C[29]"
+    Range("D9").Select
+    ActiveCell.FormulaR1C1 = "=R[20]C[28]"
+    Range("D10").Select
+    ActiveCell.FormulaR1C1 = "=R[19]C[30]"
+    Range("C10").Select
+    ActiveCell.FormulaR1C1 = "=R[20]C[31]"
+    Range("C11").Select
+    ActiveCell.FormulaR1C1 = "=R[-4]C[38]"
+    Range("D11").Select
+    ActiveCell.FormulaR1C1 = "=R[18]C[37]"
+    Range("D12").Select
+    ActiveCell.FormulaR1C1 = "=R[17]C[38]"
+    
+    Range("H7").Select
+    ActiveCell.FormulaR1C1 = "=R[-3]C[-5]"
+    Range("H8").Select
+
+    ActiveCell.FormulaR1C1 = "=IF(RC[-4]=0,0,SUM(R[-1]C:R[-1]C[1]))"
+    Range("H9").Select
+
+    Range("H9").Select
+
+    Range("H9").Select
+    ActiveCell.FormulaR1C1 = "=IF(R[-1]C[1]=0,0,IF(RC[-4]>0,RC[2],RC[2]-RC[1]))"
+    Range("H10").Select
+
+
+    ActiveCell.FormulaR1C1 = "=IF(R[-1]C[1]=0,0,IF(RC[-4]>0,RC[2],RC[2]-RC[1]))"
+    Range("H11").Select
+
+
+    Range("H9:H10").Select
+    Selection.AutoFill Destination:=Range("H9:H30"), Type:=xlFillDefault
+    Range("H9:H22").Select
+
+    Range("I8").Select
+
+    ActiveCell.FormulaR1C1 = "=ABS(RC4)"
+    Range("I9").Select
+
+
+    ActiveCell.FormulaR1C1 = "=ABS(RC4)"
+    Range("I8:I9").Select
+    Selection.AutoFill Destination:=Range("I8:I30"), Type:=xlFillDefault
+    Range("I8:I22").Select
+
+    Range("J8").Select
+
+    ActiveCell.FormulaR1C1 = "=R[-1]C[-2]"
+
+    Range("J9").Select
+
+    ActiveCell.FormulaR1C1 = "=R[-1]C+R[-1]C[-6]"
+
+    Range("J10").Select
+
+    ActiveCell.FormulaR1C1 = "=R[-1]C+R[-1]C[-6]"
+    Range("J9:J10").Select
+    Selection.AutoFill Destination:=Range("J9:J30"), Type:=xlFillDefault
+    Range("J9:J22").Select
+
+    Range("H14").Select
+    ActiveCell.FormulaR1C1 = "=R[-1]C"
+    Range("I14").Select
+    ActiveCell.FormulaR1C1 = "=R[14]C[42]"
+
+
+    Dim i As Integer
+    i = 7
+    Do While Cells(i, 8).Value <> 0
+        i = i + 1
+    Loop
+    Range(Cells(7, 8), Cells(i - 1, 9)).Select
+    
+    ActiveSheet.Shapes.AddChart.Select
+    ActiveChart.ChartType = xlColumnStacked
+    ActiveChart.SetSourceData Source:=Range(Cells(7, 8), Cells(i - 1, 9))
+
+    
+    ''''delete the guidlines
+    'ActiveChart.Axes(xlValue).MajorGridlines.Select
+    'Selection.Delete
+    
+    'change the width of each column
+    
+    ActiveChart.SeriesCollection(1).Select
+    ActiveChart.ChartGroups(1).GapWidth = 30
+    
+    'fill the first and last column
+    With Selection.Format.Fill
+        .Visible = msoTrue
+        .ForeColor.RGB = RGB(0, 32, 96)
+        .Transparency = 0
+        .Solid
+    End With
+    
+    'let bottom column become no fill
+    a = 2
+    Do While a < (i - 7)
+        ActiveChart.SeriesCollection(1).Select
+        ActiveChart.SeriesCollection(1).Points(a).Select
+        Selection.Format.Fill.Visible = msoFalse
+        a = a + 1
+    Loop
+    
+    ActiveChart.SeriesCollection(1).Points(7).Select
+    With Selection.Format.Fill
+        .Visible = msoTrue
+        .ForeColor.RGB = RGB(0, 32, 96)
+        .Transparency = 0
+        .Solid
+    End With
+    ActiveChart.SeriesCollection(1).Points(9).Select
+    Selection.Format.Fill.Visible = msoFalse
+    ActiveChart.Axes(xlValue).MajorGridlines.Select
+    With Selection.Format.Line
+        .Visible = msoTrue
+        .ForeColor.ObjectThemeColor = msoThemeColorBackground1
+        .ForeColor.TintAndShade = 0
+        .ForeColor.Brightness = -0.150000006
+        .Transparency = 0
+    End With
+        
+    'positive fill red color and negative fill green color
+    For b = 7 To 50
+       If Cells(b, 4).Value < 0 Then
+              ActiveChart.SeriesCollection(2).Select
+              ActiveChart.SeriesCollection(2).Points(b - 6).Select
+              With Selection.Format.Fill
+                    .Visible = msoTrue
+                    .ForeColor.RGB = RGB(0, 124, 80)
+                    .Solid
+              End With
+        End If
+    Next b
+    For b = 7 To 50
+       If Cells(b, 4).Value > 0 Then
+              ActiveChart.SeriesCollection(2).Select
+              ActiveChart.SeriesCollection(2).Points(b - 6).Select
+              With Selection.Format.Fill
+                    .Visible = msoTrue
+                    .ForeColor.RGB = RGB(128, 0, 0)
+                    .Solid
+              End With
+        End If
+    Next b
+    'column width
+    ActiveChart.SeriesCollection(1).Select
+    ActiveChart.ChartGroups(1).GapWidth = 50
+    'delete series name
+    ActiveChart.Legend.Select
+    Selection.Delete
+    'delete bottom data lebel
+    ActiveChart.SetElement (msoElementDataLabelInsideEnd)
+    ActiveChart.SeriesCollection(1).DataLabels.Select
+    Selection.Delete
+    ActiveChart.Axes(xlValue).Select
+    ActiveChart.Axes(xlValue).MinimumScale = Int(0.8 * Cells(4, 3))
+    
+    'change color for GCT Task
+    ActiveChart.SeriesCollection(1).Select
+    ActiveChart.SeriesCollection(1).Points(8).Select
+    Selection.Format.Fill.Visible = msoFalse
+    ActiveChart.SeriesCollection(2).DataLabels.Select
+    ActiveChart.SeriesCollection(2).Select
+    ActiveChart.SeriesCollection(2).Points(8).Select
+    With Selection.Format.Fill
+        .Visible = msoTrue
+        .ForeColor.RGB = RGB(0, 176, 240)
+        .Transparency = 0
+        .Solid
+    End With
+    
+    ActiveChart.Axes(xlCategory).Select
+    Selection.Delete
+    
+    ActiveChart.SeriesCollection(2).DataLabels.Select
+    Selection.Format.TextFrame2.TextRange.Font.Size = 8
+    With Selection.Format.TextFrame2.TextRange.Font
+        .NameComplexScript = "Arial"
+        .NameFarEast = "Arial"
+        .Name = "Arial"
+    End With
+    
+    
+'
+End Sub
+Sub Macro14()
+'
+' Macro14 Macro
+'
+
+'
+    Range("H14").Select
+    ActiveCell.FormulaR1C1 = "=R[-1]C"
+    Range("I14").Select
+    ActiveCell.FormulaR1C1 = "=R[14]C[42]"
+    Range("I15").Select
+    ActiveWindow.SmallScroll Down:=-3
+    
+    ActiveSheet.ChartObjects("Chart 7").Activate
+    ActiveChart.SeriesCollection(1).Select
+    ActiveChart.SeriesCollection(2).DataLabels.Select
+    ActiveChart.SeriesCollection(2).Select
+    ActiveChart.SeriesCollection(1).Select
+    ActiveChart.SeriesCollection(1).Points(8).Select
+    Selection.Format.Fill.Visible = msoFalse
+    ActiveChart.SeriesCollection(2).DataLabels.Select
+    ActiveChart.SeriesCollection(2).Select
+    ActiveChart.SeriesCollection(2).Points(8).Select
+    With Selection.Format.Fill
+        .Visible = msoTrue
+        .ForeColor.RGB = RGB(0, 176, 240)
+        .Transparency = 0
+        .Solid
+    End With
+    ActiveChart.SeriesCollection(2).DataLabels.Select
+    ActiveChart.SeriesCollection(2).Points(7).DataLabel.Select
+    Selection.Left = 279.352
+    Selection.Top = 48.854
+    ActiveChart.SeriesCollection(2).Points(2).DataLabel.Select
+    ActiveChart.SeriesCollection(1).Select
+    ActiveChart.SeriesCollection(2).DataLabels.Select
+    Selection.Format.TextFrame2.TextRange.Font.Size = 8
+    With Selection.Format.TextFrame2.TextRange.Font
+        .NameComplexScript = "Arial"
+        .NameFarEast = "Arial"
+        .Name = "Arial"
+    End With
+    ActiveChart.SeriesCollection(2).Points(2).DataLabel.Select
+    ActiveChart.SeriesCollection(2).Points(2).DataLabel.Text = "0.30" & Chr(13) & " "
+    Selection.Format.TextFrame2.TextRange.Characters.Text = "0.30" & Chr(13) & " "
+    With Selection.Format.TextFrame2.TextRange.Characters(1, 5).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(1, 5).Font
+        .BaselineOffset = 0
+        .Bold = msoFalse
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(6, 1).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(6, 1).Font
+        .BaselineOffset = 0
+        .Bold = msoFalse
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    Selection.Left = 87.833
+    Selection.Top = 65.783
+    Range("K12").Select
+    ActiveSheet.ChartObjects("Chart 7").Activate
+    ActiveChart.SeriesCollection(2).DataLabels.Select
+    ActiveChart.SeriesCollection(2).Points(2).DataLabel.Select
+    Selection.Format.TextFrame2.TextRange.Characters(1, 5).Font.Bold = msoTrue
+    ActiveChart.SeriesCollection(2).Points(2).DataLabel.Text = "0.30" & Chr(13) & "" & Chr(13) & " "
+    Selection.Format.TextFrame2.TextRange.Characters.Text = "0.30" & Chr(13) & "" & Chr(13) & " "
+    With Selection.Format.TextFrame2.TextRange.Characters(1, 5).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(1, 5).Font
+        .BaselineOffset = 0
+        .Bold = msoTrue
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(6, 1).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(6, 1).Font
+        .BaselineOffset = 0
+        .Bold = msoFalse
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(7, 1).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(7, 1).Font
+        .BaselineOffset = 0
+        .Bold = msoFalse
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    Range("C8").Select
+    Selection.Copy
+    ActiveSheet.ChartObjects("Chart 7").Activate
+    ActiveChart.SeriesCollection(2).DataLabels.Select
+    ActiveChart.SeriesCollection(2).Points(2).DataLabel.Select
+    ActiveChart.Paste
+    ActiveChart.Paste
+    Application.CutCopyMode = False
+    ActiveChart.SeriesCollection(2).Points(2).DataLabel.Text = "0.30" & Chr(13) & "G2C V2," & Chr(13) & "SIP" & Chr(13) & " "
+    Selection.Format.TextFrame2.TextRange.Characters.Text = "0.30" & Chr(13) & "G2C V2," & Chr(13) & "SIP" & Chr(13) & " "
+    With Selection.Format.TextFrame2.TextRange.Characters(1, 5).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(1, 5).Font
+        .BaselineOffset = 0
+        .Bold = msoTrue
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(6, 8).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(6, 8).Font
+        .BaselineOffset = 0
+        .Bold = msoFalse
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(14, 4).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(14, 3).Font
+        .BaselineOffset = 0
+        .Bold = msoFalse
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(17, 1).Font
+        .BaselineOffset = 0
+        .Bold = msoFalse
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(18, 1).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(18, 1).Font
+        .BaselineOffset = 0
+        .Bold = msoFalse
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    Selection.Left = 81.278
+    Selection.Top = 65.588
+    ActiveWindow.ScrollColumn = 2
+    ActiveWindow.ScrollColumn = 3
+    ActiveWindow.ScrollColumn = 4
+    ActiveWindow.ScrollColumn = 5
+    ActiveWindow.ScrollColumn = 6
+    ActiveWindow.ScrollColumn = 7
+    ActiveWindow.ScrollColumn = 9
+    ActiveWindow.ScrollColumn = 10
+    ActiveWindow.ScrollColumn = 11
+    ActiveWindow.ScrollColumn = 12
+    ActiveChart.SeriesCollection(2).Points(2).DataLabel.Text = _
+        "0.30" & Chr(13) & "G2C V2, " & Chr(13) & "SIP" & Chr(13) & " "
+    Selection.Format.TextFrame2.TextRange.Characters.Text = "0.30" & Chr(13) & "G2C V2, " & Chr(13) & "SIP" & Chr(13) & " "
+    With Selection.Format.TextFrame2.TextRange.Characters(1, 5).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(1, 5).Font
+        .BaselineOffset = 0
+        .Bold = msoTrue
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(6, 9).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(6, 9).Font
+        .BaselineOffset = 0
+        .Bold = msoFalse
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(15, 4).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(15, 3).Font
+        .BaselineOffset = 0
+        .Bold = msoFalse
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(18, 1).Font
+        .BaselineOffset = 0
+        .Bold = msoFalse
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(19, 1).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(19, 1).Font
+        .BaselineOffset = 0
+        .Bold = msoFalse
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    Range("AC28").Select
+    Selection.Copy
+    ActiveSheet.ChartObjects("Chart 7").Activate
+    ActiveChart.SeriesCollection(2).DataLabels.Select
+    ActiveChart.SeriesCollection(2).Points(2).DataLabel.Select
+    ActiveChart.Paste
+    ActiveChart.SeriesCollection(2).Points(2).DataLabel.Text = _
+        "0.30" & Chr(13) & "G2C V2, 0.20 " & Chr(13) & "SIP" & Chr(13) & " "
+    Range("AD28").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    ActiveSheet.ChartObjects("Chart 7").Activate
+    ActiveChart.SeriesCollection(2).DataLabels.Select
+    ActiveChart.SeriesCollection(2).Points(2).DataLabel.Select
+    ActiveChart.Paste
+    ActiveChart.SeriesCollection(2).Points(2).DataLabel.Text = _
+        "0.30" & Chr(13) & "G2C V2, 0.20 " & Chr(13) & "SIP, 0.10 " & Chr(13) & " "
+    Selection.Format.TextFrame2.TextRange.Characters.Text = _
+        "0.30" & Chr(13) & "G2C V2, 0.20 " & Chr(13) & "SIP, 0.10 " & Chr(13) & " "
+    With Selection.Format.TextFrame2.TextRange.Characters(1, 5).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(1, 5).Font
+        .BaselineOffset = 0
+        .Bold = msoTrue
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(6, 14).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(6, 14).Font
+        .BaselineOffset = 0
+        .Bold = msoFalse
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(20, 11).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(20, 10).Font
+       .BaselineOffset = 0
+        .Bold = msoFalse
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(30, 1).Font
+        .BaselineOffset = 0
+        .Bold = msoFalse
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(31, 1).ParagraphFormat
+        .TextDirection = msoTextDirectionLeftToRight
+        .Alignment = msoAlignCenter
+    End With
+    With Selection.Format.TextFrame2.TextRange.Characters(31, 1).Font
+        .BaselineOffset = 0
+        .Bold = msoFalse
+        .NameComplexScript = "Arial"
+        .NameFarEast = "+mn-ea"
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(0, 0, 0)
+        .Fill.Transparency = 0
+        .Fill.Solid
+        .Size = 8
+        .Italic = msoFalse
+        .Kerning = 12
+        .Name = "Arial"
+        .UnderlineStyle = msoNoUnderline
+        .Strike = msoNoStrike
+    End With
+End Sub
